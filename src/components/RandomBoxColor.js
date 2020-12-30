@@ -9,12 +9,13 @@ class RandomBoxColor extends React.Component{
         this.counter = 0;
         
         this.state = {
+            // isBox : 1, 
             color : this.getRandomColor(),
+            isBox : true
         }
     }
 
     componentDidMount (){ 
-
         this.boxInterval = setInterval(()=> {
             this.setState({color: this.getRandomColor() }) 
         },1000  ); 
@@ -22,12 +23,13 @@ class RandomBoxColor extends React.Component{
 
     componentDidUpdate(prevProps, prevState) {
 
-        
-
         if (this.counter < 9){
-         
+            if (this.counter >= 4 ) {
+                this.state.isBox = false
+            }
             this.counter = this.counter + 1;
             console.log (this.counter);
+            
         }
         else {
             clearInterval (this.boxInterval);
@@ -57,11 +59,22 @@ class RandomBoxColor extends React.Component{
         //convert color state to style 
 
         const {color} = this.state
-        const boxStyle = {backgroundColor: color}
-
+        // console.log (this.state.isBox);
+        const boxStyle =  {backgroundColor: color};
+        this.boxStyle = {backgroundColor: color ,borderRadius: "50%" };
+        
+        if (this.state.isBox === 1) {
+            
+            // alert("1");    
+        // } else{
+            // this.boxStyle = {backgroundColor: color ,borderRadius: "50%" };
+            // alert("1");
+            console.log(this.boxStyle);
+        }
+        // 
         return(
             <>
-                <div className="box" style= {boxStyle}> </div>
+                <div className={this.state.isBox ? "box" : "circle"}  style= {boxStyle}> </div>
             </>
 
 
