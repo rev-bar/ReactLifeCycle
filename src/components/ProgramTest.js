@@ -13,8 +13,10 @@ function ProgramTest () {
     useEffect(() => {
       if(question1 === 'option2'){
         setQuestion2('option2')  
+        setQuestion3('option2')
       } else{
-        setQuestion2() 
+        setQuestion2()
+        setQuestion3() 
       }
       
         
@@ -48,6 +50,20 @@ function ProgramTest () {
                     </InputGroup.Radio>
                     <label>Partial</label>   
                     <InputGroup.Radio  value="option3" checked={question2 === 'option3'} onChange= {(e) => setQuestion2(e.target.value)}  >
+                    </InputGroup.Radio>
+                </Container>
+            </div>
+            <div value = {question3}  >
+                <label>Have you Programmed in java??</label>
+                <Container className="text-center">
+                    <label>Yes</label>   
+                    <InputGroup.Radio value="option1" checked={question3 === 'option1'} onChange= {(e) => setQuestion3(e.target.value)}  >
+                    </InputGroup.Radio>
+                    <label>No</label>   
+                    <InputGroup.Radio  value="option2" checked={question3 === 'option2'} onChange= {(e) => setQuestion3(e.target.value)} >
+                    </InputGroup.Radio>
+                    <label>Partial</label>   
+                    <InputGroup.Radio  value="option3" checked={question3 === 'option3'} onChange= {(e) => setQuestion3(e.target.value)}  >
                     </InputGroup.Radio>
                 </Container>
             </div>
