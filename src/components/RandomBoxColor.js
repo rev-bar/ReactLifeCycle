@@ -8,9 +8,14 @@ class RandomBoxColor extends React.Component{
         super (props);
 
         this.state = {
-
             color : this.getRandomColor()
         }
+    }
+
+    componentDidMount (){
+        setInterval(()=> {
+            this.setState({color: this.getRandomColor() }) 
+        },1000  ); 
     }
 
        
