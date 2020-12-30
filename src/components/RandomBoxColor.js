@@ -6,19 +6,41 @@ class RandomBoxColor extends React.Component{
 
     constructor (props){
         super (props);
-
+        this.counter = 0;
+        
         this.state = {
-            color : this.getRandomColor()
+            color : this.getRandomColor(),
         }
     }
 
-    componentDidMount (){
-        setInterval(()=> {
+    componentDidMount (){ 
+
+        this.boxInterval = setInterval(()=> {
             this.setState({color: this.getRandomColor() }) 
         },1000  ); 
     }
 
+    componentDidUpdate(prevProps, prevState) {
+
+        
+
+        if (this.counter < 9){
+         
+            this.counter = this.counter + 1;
+            console.log (this.counter);
+        }
+        else {
+            clearInterval (this.boxInterval);
+        }
+
+    }
+
+    componentWillUnmount() {
+        alert("Helpppp");
+    }
        
+
+
     getRandomColor() {
         const letters = '0123456789ABCDEF';
         let color = "#";

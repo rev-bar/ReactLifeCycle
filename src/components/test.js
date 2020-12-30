@@ -1,7 +1,7 @@
 import React from 'react';
 import './RandomBoxColor.css';
 
-class RandomBox extends React.Component {
+class RandomBoxColor extends React.Component {
     
     constructor(props) {
         super(props);
@@ -63,4 +63,4 @@ class RandomBox extends React.Component {
     }
 }
 
-export default RandomBox;
+export default RandomBoxColor;
