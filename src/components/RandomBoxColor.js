@@ -61,17 +61,11 @@ class RandomBoxColor extends React.Component{
         const {color} = this.state
         // console.log (this.state.isBox);
         const boxStyle =  {backgroundColor: color};
-        this.boxStyle = {backgroundColor: color ,borderRadius: "50%" };
         
         if (this.state.isBox === 1) {
-            
-            // alert("1");    
-        // } else{
-            // this.boxStyle = {backgroundColor: color ,borderRadius: "50%" };
-            // alert("1");
             console.log(this.boxStyle);
         }
-        // 
+    
         return(
             <>
                 <div className={this.state.isBox ? "box" : "circle"}  style= {boxStyle}> </div>
