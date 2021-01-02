@@ -1,7 +1,6 @@
 import React from 'react';
-import ProgramTest from './components/ProgramTest';
-import RandomBoxColor from './components/RandomBoxColor';
-
+import ProgramTest from './components/ProgramingTest/ProgramTest';
+import RandomBoxColor from './components/RandomBoxColor/RandomBoxColor';
 
 function App() {
 
@@ -9,6 +8,7 @@ function App() {
     <> 
       {/* <RandomBoxColor/> */}
       <ProgramTest/>
+      
     </>
   )
 }
